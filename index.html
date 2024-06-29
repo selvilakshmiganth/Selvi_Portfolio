@@ -1,0 +1,396 @@
+<html>
+<head>
+<link rel="stylesheet" href="pf.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function typeText(textArray, delay) {
+        let index = 0;
+        const typingElement = document.getElementById('typingText');
+        typingElement.style.visibility = 'visible'; // Make the text visible
+
+        function type() {
+            const currentText = textArray[index % textArray.length];
+            typingElement.innerHTML = ''; // Clear the text
+            let charIndex = 0;
+            const typingInterval = setInterval(function() {
+                if (charIndex < currentText.length) {
+                    typingElement.innerHTML += currentText.charAt(charIndex);
+                    charIndex++;
+                } else {
+                    clearInterval(typingInterval); // Stop typing interval
+                    setTimeout(erase, delay); // Call erase function after a delay
+                }
+            }, delay);
+
+            function erase() {
+                const erasingInterval = setInterval(function() {
+                    if (typingElement.innerHTML.length > 0) {
+                        typingElement.innerHTML = typingElement.innerHTML.slice(0, -1);
+                    } else {
+                        clearInterval(erasingInterval); // Stop erasing interval
+                        index++; // Move to the next text
+                        setTimeout(type, delay); // Call type function again after a delay
+                    }
+                }, delay);
+            }
+        }
+
+        type();
+    }
+
+    window.onload = function () {
+        const texts = ['Full Stack Developer', 'Web Developer', 'Frontend Developer', 'Angular Developer']; // Array of texts to cycle through
+        typeText(texts, 100); // Initial text
+    };
+</script>
+  <style>
+        .custom-button {
+            background-color: black;
+            border: 5px solid #854CE6;
+			border-radius:15%;
+            color: #854CE6;
+			font-weight:bold;
+            font-size: 16px; /* Optional: Customize the font size */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .custom-button:hover {
+            background-color: #854CE6;
+            border-color: #854CE6;
+            color: white;
+        }
+		     .container1 {
+            font-family: Poppins, sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            margin-top: 50px;
+            white-space: nowrap; /* Prevents the text from wrapping */
+            position: relative; /* Ensures the absolute positioning of the text */
+        }
+
+        .typing-text {
+            display: inline-block;
+            border-right: 5px solid #854CE6; /* Typing cursor effect */
+            overflow: hidden;
+            color: #854CE6;
+            padding-right: 10px;
+            white-space: nowrap;
+            position: absolute; /* Positions the text absolutely within the container */
+            top: -100px;
+            left: 330px;
+        }
+         .btn-grad {
+            background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+            margin: 10px;
+            padding: 10px 20px;
+            text-align: center;
+			font-family:myFirstFont;
+			font-size:20px;
+			font-weight:bold;
+            //text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+           // box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+          
+
+
+    </style>
+</head>
+<body>
+	<div id="#container">
+		<nav>
+		<i class="fa fa-paw" style="font-size:40px;color:white;margin-left:250px;"></i>
+		<span style="font-size:25px;color:white;margin-left:10px;font-weight:bold;font-family:arial">Selfolio</span>
+			<ul>
+				<a href="#section1"><li>About </li></a>
+				<a href="#section2"><li>Skills</li></a>
+				<a href="#section3"><li>Projects</li></a>
+				<a href="#section4"><li>Education</li></a>
+				<a href="#section5"><li>Contact</li></a>
+			</ul>
+			 <a href="https://github.com/enterprises/selvi/getting-started"> <button type="button" class="btn btn-outline-primary custom-button" style="margin-bottom:10px;margin-left:150px;">GitHub</button></a>
+
+			</nav>
+
+		
+		<section id="section1">
+			<article>
+				<div class="first">
+					<p>Hi, I am </p>
+					<p>Selvi M</p>
+					<p style="font-family:Poppins,sans-serif;font-weight:bold;font-size:40px;"> I am a </p>
+				</div>
+				<div class="container1">
+					<span class="typing-text" id="typingText"></span>
+				</div>
+				<div class="para">
+					<p>A skilled Full Stack Developer with a strong portfolio, 
+					passionate about staying updated on Frontend & Backend Tech. 
+					Collaborative and committed to quality, you thrive in dynamic teams. 
+					Eager to contribute creativity and bring innovative ideas to life.</p>
+				</div>
+				<a href="Updated Resume.pdf" class="btn btn-grad" style="margin-left: 250px; margin-top: 40px;width:200px;">Check Resume</a>
+			</article>
+			<article style="margin-left:100px";>
+				<img src="pngegg.png" height="400px" width="400px">
+			</article>
+		</section>
+		<section id="section2">
+			<article>
+				<h2>Skills</h2>
+				<p style="margin-left:300px" id="p1">	Here are some of my skills on which I have learnt.</p>
+			</article>
+			<article id="a2">
+				<div id="t1">
+					<h3>Frontend</h3>
+					 <table width="420px" height="150px" style="margin-left:10px">
+						<tr>
+							<td><p><img src="html5.png" height="30px" width="30px"> HTML5</p></td>
+							<td><p><img src="css.png" height="30px" width="30px"> CSS3</p></td>
+							<td><p><img src="js.png" height="30px" width="30px"> JAVASCRIPT</p></td>
+						</tr>
+						<tr>
+							
+							<td><p><img src="angular.png" height="30px" width="30px"> ANGULAR</p></td>
+							<td><p><img src="jquery.png" height="30px" width="30px"> JQUERY</p></td>
+							<td><p><img src="bootstrap.png" height="30px" width="30px"> BOOTSTRAP</p></td>
+						</tr>
+					</table>
+				</div>
+			
+				<div id="t2">
+					<h3>Backend</h3>
+					 <table width="420px" height="150px" style="margin-left:10px">
+						<tr>
+							<td><p><img src="java.png" height="30px" width="50px"> JAVA</p></td>
+							<td><p><img src="net.png" height="30px" width="60px"> .NET</p></td>
+							<td><p><img src="j2ee.png" height="30px" width="60px"> J2EE</p></td>
+
+						</tr>
+						<tr>
+							
+							<td colspan="2"><p style="margin-left:100px;"><img src="php.png" height="30px" width="30px"> PHP</p></td>
+							<td colspan="2"><p><img src="mysql.png" height="30px" width="60px"> MYSQL</p></td>
+
+
+						</tr>
+					</table>
+				</div>
+			</article>
+			<article id="a3">
+				<div id="t3">
+					<h3>Others</h3>
+					 <table width="450px" height="150px" style="margin-left:10px">
+						<tr>
+							<td><p><img src="git.png" height="30px" width="30px"> GIT</p></td>
+							<td><p><img src="corel.png" height="30px" width="30px"> CORELDRAW </p></td>
+							<td><p><img src="flash.png" height="30px" width="30px"> FLASH</p></td>
+
+						</tr>
+						<tr>
+							
+							<td><p><img src="3ds.png" height="30px" width="30px"> 3DS MAX</p></td>
+							<td><p><img src="maya.png" height="30px" width="30px"> MAYA</p></td>
+							<td><p><img src="ps.png" height="30px" width="30px"> PHOTOSHOP</p></td>
+
+
+						</tr>
+					</table>
+				</div>
+			</article>
+		</section>
+		<section id="section3">
+			
+			<h2>Projects</h2>
+			<p id="p2" style="margin-left:300px">I have worked on a wide range of projects. 
+			Here are some of my projects.</p>
+			<div class="card1" style="width:300px;height:400px;margin-left:250px;">
+				<img class="card-img-top" src="we.png" alt="Card image" style="width:100%;height:40%;border-radius:10px;">
+				<div class="card-body">
+					<p class="card-title" style="margin-top:10px;"><span>Html</span><span> Css </span><span>Bootstrap</span></P>
+					
+					<p class="card-text"><h3>WE Transfer</h3>
+					<p id="ct">We Transfer is a Clone website.I created as a beginner frontend developer.I designed templates of We transfer using HTML & CSS.</p></p>
+					<a href="https://wetransfer1.netlify.app" id="btn" class="btn btn-primary">View Project</a>
+				</div>
+			</div>
+			<div class="card1" style="width:300px;height:400px;margin-left:20px;">
+				<img class="card-img-top" src="flip.png" alt="Card image" style="width:100%;height:40%;border-radius:10px;">
+				<div class="card-body">
+					<p class="card-title" style="margin-top:10px;"><span>Html</span><span> Css </span><span>Bootstrap</span></P>
+					
+					<p class="card-text"><h3>Flipkart Clone</h3>
+					<p id="ct">Flipkart Clone is a Clone website.I created as a beginner frontend developer.I designed templates for flipkart using HTML & CSS.</p></p>
+					<a href="https://flipkartclone001.netlify.app" id="btn" class="btn btn-primary">View Project</a>
+				</div>
+			</div>
+			<div class="card1" style="width:300px;height:400px;margin-left:20px;">
+				<img class="card-img-top" src="fb.png" alt="Card image" style="width:100%;height:40%;border-radius:10px;">
+				<div class="card-body">
+					<p class="card-title" style="margin-top:10px;"><span>Html</span><span> Css </span></P>
+					
+					<p class="card-text"><h3>FaceBook Clone</h3>
+					<p id="ct">FaceBook Clone is a Clone website.I created as a beginner frontend developer.I designed templates of facebook using HTML & CSS.</p></p>
+					<a href="https://facebookclone001.netlify.app" id="btn" class="btn btn-primary">View Project</a>
+				</div>
+			</div>
+			<div class="card1" style="width:350px;height:470px;margin-left:400px;margin-top:40px;">
+				<img class="card-img-top" src="exam.png" alt="Card image" style="width:100%;height:40%;border-radius:10px;">
+				<div class="card-body">
+					<p class="card-title" style="margin-top:10px;"><span>Html</span><span> Css </span><span>J2EE</span><span>MySql<span><br><br>
+					<span>JavaScript</span><span>Bootstrap</span></P>
+					
+					<p class="card-text"><h3>Test.com</h3>
+					<p id="ct">Test.com is a Mock test website.I create login page for both Student & Admin,CURD operations for student.In main page Student has attend their exams & view scores.</p></p>
+					<a href="OnlineExam.pdf" id="btn" class="btn btn-primary">View Project</a>
+				</div>
+			</div>
+			<div class="card1" style="width:350px;height:470px;margin-left:20px;position:absolute;top:2020px;left:770px;">
+				<img class="card-img-top" src="newsgrid.png" alt="Card image" style="width:100%;height:40%;border-radius:10px;">
+				<div class="card-body">
+					<p class="card-title" style="margin-top:10px;"><span>Html</span><span> Css </span><span>Bootstrap</span></p>
+					
+					
+					<p class="card-text"><h3>News Grid</h3>
+					<p id="ct">NewsGird is a news website.I am using css grid to show the news & I also added detailed pages for each news.</p></p>
+					<a href="https://newsgrids1.netlify.app" id="btn" class="btn btn-primary">View Project</a>
+				</div>
+			</div>
+		</section>
+		
+<section id="section4">
+<h2 id="h2">Education</h2> 
+<p id="p3" style="margin-left:300px;">My education has been a journey of self-discovery and growth. My educational details are as follows.</p>
+  <div class="container py-5">
+    <div class="main-timeline-2">
+      <div class="timeline-2 left-2">
+        <div class="card">
+          
+          <div class="card-body p-4">
+		  
+            <h4 class="fw-bold mb-4">Full Stack Development with Angular Framework</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2023-2024</p>
+            <p class="mb-0">Accord info Matrix,Chennai.</p><br>
+			<p> Grade : 90%</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 right-2">
+        <div class="card">
+          
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">MCA</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2012-2015</p>
+            <p class="mb-0">Kalasalingam University,Krishnankovil.</p><br>
+						<p> Grade : 90%</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 left-2">
+        <div class="card">
+         
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">BSC (Computer Science)</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2009-2012</p>
+            <p class="mb-0">SFR College for Women,Sivakasi.</p><br>
+						<p> Grade : 83%</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 right-2">
+        <div class="card">
+          
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Diploma in Animation Technology</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2009-2012</p>
+            <p class="mb-0">SFR College for Women,Sivakasi.</p><br>
+						<p> Grade : 85%</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 left-2">
+        <div class="card">
+         
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">HSC</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2008-2009 </p>
+            <p class="mb-0">M.N.R.D. Girls Hr Sec School,Srivilliputtur.</p><br>
+						<p> Grade : 83%</p>
+
+          </div>
+        </div>
+      </div>
+	   <div class="timeline-2 right-2">
+        <div class="card">
+         
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">SSLC</h4>
+            <p class="text-muted mb-4"><i class="fa fa-clock-o" aria-hidden="true"></i> 2006-2007 </p>
+            <p class="mb-0">M.N.R.D. Girls Hr Sec School,Srivilliputtur.</p><br>
+						<p> Grade : 79%</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+		<section id="section5">
+			<h2>Contact</h2>
+			<p>Feel free to reach out to me for any questions or opportunities!</p>
+			<div>
+
+				<form>
+					<span style="color:white">EMail Me<img src="rocket.svg" height="100px" width="50px"></img></span>
+					<input type="text" class="form-control form-control-lg bg-transparent" placeholder="E-Mail">
+					<input type="text" class="form-control form-control-lg bg-transparent" placeholder="Your Name">
+
+					<input type="text" class="form-control form-control-lg bg-transparent" placeholder="Subject">
+					<textarea class="form-control bg-transparent" rows="3" placeholder="Message"></textarea>
+					<button class="btn btn-grad" style="margin-left:20px;width:500px;">Send</button>
+
+				</form>
+			</div>
+		</section>
+		<footer>
+			 <div class="wavy">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#273036" fill-opacity="1" d="M0,64L60,69.3C120,75,240,85,360,96C480,107,600,117,720,128C840,139,960,149,1080,133.3C1200,117,1320,75,1380,53.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
+		
+        <h3>Selvi M</h3>
+        <ul>
+            <li><a href="#section1">About</a></li>
+            <li><a href="#section2">Skills</a></li>
+            <li><a href="#section3">Projects</a></li>
+            <li><a href="#section4">Education</a></li>
+            <li><a href="#section5">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="tel:962-969-3100"><i class="fa fa-phone" style="font-size:25px;color:white"></i></a></li>
+            <li><a href="mailto:mselvimadasamy@gmail.com"><i class="fa fa-envelope" style="font-size:25px;color:white"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/selvi-samy-8a5b822b7"><i class="fa fa-linkedin" style="font-size:25px;color:white"></i></a></li>
+            <li><a href="http://www.instagram.com/mselvimadasamy"><i class="fa fa-instagram" style="font-size:25px;color:white"></i></a></li>
+            <li><a href="https://wa.me/9629693100"><i class="fa fa-whatsapp" style="font-size:25px;color:white"></i></a></li>
+            <li><a href="https://github.com/enterprises/selvi/getting-started"><i class="fa fa-github" style="font-size:25px;color:white"></i></a></li>
+        </ul>
+    </div>
+		</footer>
+	</div>
+</body>
+</html>
