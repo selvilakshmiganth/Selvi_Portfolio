@@ -1,3 +1,4 @@
+
 *{
     margin:0px;
     padding:0px;
@@ -5,6 +6,31 @@
 	box-sizing:border-box;
     font-family:arial;
 }
+@font-face {
+  font-family: myFirstFont;
+  src: url(Poppins-ExtraBold.ttf);
+}
+@font-face {
+  font-family: mysecFont;
+  src: url(Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: mythirdFont;
+  src: url(Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: myfourthFont;
+  src: url(Poppins-ExtraLight.ttf);
+}
+@font-face {
+  font-family: myfifthFont;
+  src: url(Poppins-Light.ttf);
+}
+@font-face {
+  font-family: mysixthFont;
+  src: url(Poppins-black.ttf);
+}
+
 #container{
     width:80%;
     height:auto;
@@ -300,30 +326,6 @@ footer h3{
 	font-size:30px;
 	color:#854CE6;
 	font-weight:bold;
-}
-@font-face {
-  font-family: myFirstFont;
-  src: url(Poppins-ExtraBold.ttf);
-}
-@font-face {
-  font-family: mysecFont;
-  src: url(Poppins-Regular.ttf);
-}
-@font-face {
-  font-family: mythirdFont;
-  src: url(Poppins-SemiBold.ttf);
-}
-@font-face {
-  font-family: myfourthFont;
-  src: url(Poppins-ExtraLight.ttf);
-}
-@font-face {
-  font-family: myfifthFont;
-  src: url(Poppins-Light.ttf);
-}
-@font-face {
-  font-family: mysixthFont;
-  src: url(Poppins-black.ttf);
 }
 
 #section2 div h3{
